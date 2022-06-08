@@ -1,2 +1,8 @@
 ---
 # tasks file for roles/motd
+#
+- name: display post install message
+   debug:
+    msg:
+      - 'Thank you for choosing -----'
+
