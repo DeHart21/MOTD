@@ -4,5 +4,5 @@
 - name: display post install message seeing how many chars this can holdd
   copy:
     src: motd
-    path: /etc/motd
+    dest: /etc/motd
     mode: '0644'
