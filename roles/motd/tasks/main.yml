@@ -5,4 +5,8 @@
   debug:
     msg:
       - 'Thank you for choosing -----'
+  run_once: true
+
+- pause:
+    seconds: 20
 
