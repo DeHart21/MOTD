@@ -1,8 +1,27 @@
 ---
 # tasks file for roles/motd
 #
-- name: display post install message seeing how many chars this can holdd
+- name: Pre-setup
   copy:
     src: motd
     dest: /etc/motd
     mode: '0644'
+
+- name: Pre-setup
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#Banner'
+    line: Banner /etc/motd
+
+- name: Pre-setup
+  lineinfile:
+    path: /etc/pam.d/sshd
+    regexp: '^session    optional     pam_motd.so'
+    line: '#session    optional     pam_motd.so'
+
+- name: restarting sshd
+  ansible.builtin.systemd:
+    state: restarted
+    name: sshd
+
+
