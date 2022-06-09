@@ -5,6 +5,7 @@
   debug:
     msg:
       - 'Thank you for choosing -----'
+  nocolor: true
   run_once: true
 
 - pause:
