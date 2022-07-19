@@ -1,9 +1,9 @@
 ---
 # tasks file for roles/motd
 #
-- name: Pre-setup
-  copy:
-    src: motd
+- name: Downloading file
+  get_url:
+    url: https://raw.githubusercontent.com/DeHart21/MOTD/main/roles/motd/files/motd
     dest: /etc/motd
     mode: '0644'
 
